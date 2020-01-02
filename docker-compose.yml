@@ -2,14 +2,16 @@ version: '3.7'
 services:
   app:
     container_name: node-chess
+    hostname: chess
     restart: always
     build: .
     ports:
       - '8080:8080'
+      - '8081:8081'
     links:
       - mongo
-#    networks:
-#      - mongonetwork
+    networks:
+      - mongonetwork
 
   mongo:
     container_name: mongo
@@ -17,10 +19,10 @@ services:
     hostname: mongo
     ports:
       - '27017:27017'
-#    command: mongod --bind_ip 0.0.0.0
-#    networks:
-#      - mongonetwork
+    command: mongod --bind_ip 0.0.0.0
+    networks:
+      - mongonetwork
 
-#networks:
-#  mongonetwork:
-#   driver: bridge
+networks:
+  mongonetwork:
+   driver: bridge

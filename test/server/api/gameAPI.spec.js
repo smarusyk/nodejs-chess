@@ -1,6 +1,6 @@
 var assert = require("assert");
 var request = require("request");
-var baseUrl = "http://localhost:8081/api/game";
+var baseUrl = "http://10.26.34.84:8081/api/game";
 
 var checkMoveOptions = {
   url: baseUrl + "/checkmove",
