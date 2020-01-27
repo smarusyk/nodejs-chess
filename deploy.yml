@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: chess
 spec:
-  replicas: 3
+  replicas: 4
   strategy:
     type: RollingUpdate
     rollingUpdate:
